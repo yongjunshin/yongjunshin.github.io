@@ -2,12 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: Researcher. <a href='https://www.etri.re.kr/eng/main/main.etri'>Electronics and Telecommunications Research Institute (ETRI)</a>. Daejeon, South Korea.
+subtitle: Researcher. ETRI. Daejeon, South Korea.
 
 profile:
   align: right
   image: yjshin_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
     
 
