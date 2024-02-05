@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.etri.re.kr/eng/main/main.etri'>ETRI</a>. Daejeon, South Korea.
+subtitle: Researcher. <a href='https://www.etri.re.kr/eng/main/main.etri'>Electronics and Telecommunications Research Institute (ETRI)</a>. Daejeon, South Korea.
 
 profile:
   align: right
@@ -17,10 +17,16 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I'm a permanent researcher at ETRI, a government-funded research institute in South Korea. 
+I'm a researcher of [Electronics and Telecommunications Research Institute (ETRI)](https://www.etri.re.kr/eng/main/main.etri), a government-funded research institute in South Korea. 
 
-I received my Ph.D. in software engineering at KAIST under the guidance of Professor Doo-Hwan Bae in 2023. 
+I received my Ph.D. in software engineering at [Korea Advanced Institute of Science and Technology (KAIST)](https://www.kaist.ac.kr/en/) under the guidance of Professor [Doo-Hwan Bae](https://cs.kaist.ac.kr/people/view?idx=12&kind=faculty&menu=170) in 2023. 
 
-My Ph.D. research focused on data-driven environment model generation for efficient verification of cyber-physical system (CPS) software. 
+My Ph.D. research focused on data-driven environment model generation for efficient verification of cyber-physical system (CPS) software (e.g., autonomous driving). 
 
-My research interests include model-based software engineering, meta-modeling, statistical verification, environment and uncertainty modeling, self-adaptive systems, and CPS.
+My research interests includes
+* model-based software engineering,
+* meta-modeling,
+* statistical verification,
+* environment and uncertainty modeling,
+* self-adaptive systems modeling, and
+* CPS software validation.
