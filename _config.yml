@@ -122,7 +122,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Blog # blog_name will be displayed in your blog page
-blog_description: Research, daily life, thoughts, and ideas
+blog_description: Research, daily life, and thoughts
 permalink: /blog/:year/:title/
 
 # Pagination
