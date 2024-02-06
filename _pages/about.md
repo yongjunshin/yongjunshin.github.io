@@ -7,7 +7,7 @@ subtitle: Researcher. ETRI. Daejeon, South Korea.
 profile:
   align: right
   image: yjshin_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     
 
