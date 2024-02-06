@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My first blog post test
-date: 2024-02-28 13:00:00
+date: 2024-02-06 13:00:00
 description: a simple markdown blog post test.
 tags: testTag
 categories: testCategory
