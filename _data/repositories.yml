@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - yongjunshin
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - yongjunshin/yongjunshin.github.io
+  - yongjunshin/ENVI
+  - KAIST-SE-Lab/SIMVA-SoS
+  - KAIST-SE-Lab/PASTA
