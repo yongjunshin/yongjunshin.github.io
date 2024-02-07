@@ -2,7 +2,8 @@ github_users:
   - yongjunshin
 
 github_repos:
-  - yongjunshin/yongjunshin.github.io
   - yongjunshin/ENVI
-  - KAIST-SE-Lab/SIMVA-SoS
+  - KAIST-SE-Lab/Platooning-LEGOs
   - KAIST-SE-Lab/PASTA
+  - KAIST-SE-Lab/SIMVA-SoS
+  - yongjunshin/yongjunshin.github.io

@@ -4,7 +4,7 @@ title: test project
 description: a test project with a background image
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: present
 related_publications: true
 ---
 
