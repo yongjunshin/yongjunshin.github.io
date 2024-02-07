@@ -5,22 +5,7 @@
     "image": "",
     "email": "yjshin@etri.re.kr",
     "phone": "(+82) 42-860-3815",
-    "url": "https://yongjunshin.github.io/",
-    "summary": "Software engineering researcher of ETRI, South Korea",
-    "location": {
-      "address": "401, Building#7, ETRI, Daejeon, South Korea",
-      "postalCode": "34129",
-      "city": "Daejeon",
-      "countryCode": "KR",
-      "region": ""
-    },
-    "profiles": [
-      {
-        "network": "",
-        "username": "",
-        "url": ""
-      }
-    ]
+    "url": "https://yongjunshin.github.io/"
   },
   "work": [
     {
@@ -38,11 +23,10 @@
       "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "url": "https://www.kaist.ac.kr/en/",
-      "area": "Software Engineering, School of Computing",
+      "area": "School of Computing \nAdvisor: Doo-Hwan Bae \nArea: Software engineering \nThesis: Data-Driven Environment Model Generation Using Imitation Learning For Efficient Cyber-Physical System Goal Verification",
       "studyType": "PhD",
       "startDate": "2017-03-01",
-      "endDate": "2023-02-28",
-      "summary": "Model-based software engineering for system-of-systems and cyber-physical systems.\nThesis: Data-Driven Environment Model Generation Using Imitation Learning For Efficient Cyber-Physical System Goal Verification"
+      "endDate": "2023-02-28"
     },
     {
       "institution": "Handong Global University",
@@ -84,25 +68,29 @@
     {
       "organization": "The 12th ACM/IEEE International Workshop on Software Engineering for Systems-of-Systems and Software Ecosystems (SESoS)",
       "position": "Program Committee",
-      "date": "2024",
+      "startDate": "2023",
+      "endDate": "2024",
       "summary": "Paper review"
     },
     {
       "organization": "The 36th International Conference on Software Engineering & Knowledge Engineering (SEKE)",
       "position": "Program Committee",
-      "date": "2024",
+      "startDate": "2024",
+      "endDate": "2024",
       "summary": "Paper review"
     },
     {
       "organization": "Journal of Software: Evolution and Process - special issue on 'Software Engineering for Systems-of-Systems and Software Ecosystems'",
       "position": "Reviewer",
-      "date": "2023",
+      "startDate": "2023",
+      "endDate": "2023",
       "summary": "Paper review"
     },
     {
       "organization": "The 42th International Conference on Software Engineering (ICSE)",
       "position": "Live! Team Korea",
-      "date": "2020",
+      "startDate": "2020",
+      "endDate": "2020",
       "summary": "Conference virtualization"
     }
   ]

@@ -16,7 +16,9 @@ This is my first blog post.
 * item 3
 
 ## Math test
-$ M = (S, A, \pi, s_0)|\pi:S\rightarrow A, s_0\in S$
+$$
+\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2
+$$
 
 ## Link test
 My homepage [GitHub page repository](https://github.com/yongjunshin/yongjunshin.github.io)
