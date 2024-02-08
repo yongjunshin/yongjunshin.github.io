@@ -15,7 +15,9 @@ nav_order: 6
     * Patent number: 10-2585570-0000
     * Inventors: 배두환, 신용준, 조은호
     * Date issued: 12-05-2021
+
 ---
+
 1. **시스템 오브 시스템즈 시각적 모델링 방법 및 장치 (System-of-Systems Graphical Modeling Method and Apparatus)**
     * Status: Granted (등록)
     * Patent agency: Korean Intellectual Property Office
