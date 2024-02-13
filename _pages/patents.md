@@ -4,7 +4,7 @@ permalink: /patents/
 title: Patents
 description: Patents in reversed chronological order.
 nav: true
-nav_order: 6
+nav_order: 3
 ---
 
 * **효율적인 사이버 물리 시스템 목표 검증을 위한 모방 학습을 활용한 가상 환경 모델 생성 기법 (DATA-DRIVEN ENVIRONMENT MODEL GENERATION USING IMITATION LERARING FOR EFFICIENT CPS GOAL VERIFICATION)**
