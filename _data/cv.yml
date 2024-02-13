@@ -1,32 +1,78 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
+    - name: Name
       value: Yong-Jun Shin
-    - name: Date of Birth
-      value: 1st June 1994
-    - name: Languages
-      value: Korean, English
+    - name: Position
+      value: Researcher, Electronics and Telecommunications Research Institute (ETRI), South Korea
+    - name: Email
+      value: yjshin@etri.re.kr
+    - name: Phone
+      value: (+82) 42-860-3815
+    - name: Homepage
+      value: https://yongjunshin.github.io/
 
+- title: Employment
+  type: time_table
+  contents:
+    - title: Researcher
+      institution: Electronics and Telecommunications Research Institute (ETRI), South Korea
+      year: 2023 - 
+      url: https://www.etri.re.kr/eng/main/main.etri
+        
 - title: Education
   type: time_table
   contents:
     - title: PhD
-      institution: Korea Advanced Institute of Science and Technology (KAIST), Daejeon, South Korea
+      institution: Korea Advanced Institute of Science and Technology (KAIST), South Korea
+      url: https://www.kaist.ac.kr/en/
       year: 2017 - 2023
       description:
-        - Data-Driven Environment Model Generation Using Imitation Learning For Efficient Cyber-Physical System Goal Verification
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - School of Computing 
+        - "Advisor: Doo-Hwan Bae"
+        - "Area: Software engineering"
+        - "Thesis: Data-Driven Environment Model Generation Using Imitation Learning For Efficient Cyber-Physical System Goal Verification"
+    - title: BS
+      institution: Handong Global University, South Korea
+      url: https://www.handong.edu/eng/
+      year: 2013 - 2017
       description:
-        - Description 1.
-        - Description 2.
+        - School of Computer Science and Electrical Engineering    
+
+- title: Publications
+  type: list
+  contents:
+    - https://yongjunshin.github.io/publications/
+
+- title: Patents
+  type: list
+  contents:
+    - https://yongjunshin.github.io/patents/
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - title: Best Artifact Paper Award
+      year: 2021
+      description:
+        - 16th Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS)
+        - "Platooning LEGOs: An Open Physical Exemplar for Engineering Self-Adaptive Cyber-Physical Systems-of-Systems"
+    - title: Best Paper Award
+      year: 2019
+      description:
+        - 2019 Korea Computer Congress (KCC)
+        - Analysis of Utilization Methods of Statistical Model Checking Results for Localizing Faults on System of Systems (시스템 오브 시스템즈의 오류 위치 추정을 위한 통계적 검증 결과 활용 기법 분석)
+    - title: Outstanding Paper Award
+      year: 2018
+      description:
+        - 2018 Korea Software Congress (KSC)
+        - Data-Driven Traffic Environment System-Dynamics Model Generation & Inference Method (데이터 기반 교통 흐름 시스템 다이내믹스 환경 모델 생성 및 추론 기법)
+    - title: Best Paper Award
+      year: 2018
+      description:
+        - 20th Korea Conference on Software Engineering (KCSE)
+        - Scenario-based Analysis of System-of-Systems Meta-model and Applicability Analysis for Statistical Verification (시스템 오브 시스템즈(SoS) 사례 분석을 통한 온톨로지 기반의 SoS 메타모델 개발)
+
 
 - title: Experience
   type: time_table
@@ -68,18 +114,9 @@
       year: 2015-now
       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
 
-- title: Academic Interests
+
+- title: Academic Service
   type: nested_list
   contents:
     - title: Topic 1.
@@ -95,3 +132,28 @@
   type: list
   contents:
     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+
+
+- title: Academic Service
+  type: time_table
+  contents:
+    - title: Program Committee
+      year: 2024
+      description:
+        - The 12th ACM/IEEE International Workshop on Software Engineering for Systems-of-Systems and Software Ecosystems (SESoS)
+        - Paper review
+    - title: Program Committee
+      year: 2024
+      description:
+        - The 36th International Conference on Software Engineering & Knowledge Engineering (SEKE)
+        - Paper review
+    - title: Reviewer
+      year: 2023
+      description:
+        - "Journal of Software: Evolution and Process - special issue on 'Software Engineering for Systems-of-Systems and Software Ecosystems'"
+        - Paper review
+    - title: Live! Team Korea
+      year: 2020
+      description:
+        - The 42th International Conference on Software Engineering (ICSE)
+        - Conference virtualization
