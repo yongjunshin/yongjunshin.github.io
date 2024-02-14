@@ -1,13 +1,14 @@
 ---
 layout: page
-title: Software R&D for Model-based Analysis and Verification of Higher-order Large Complex System
-description: 모델 기반의 초대형 복잡 시스템 분석 및 검증 SW 개발
+title: SESoS
+description: Software R&D for Model-based Analysis and Verification of Higher-order Large Complex System
 img: assets/img/starlab1.jpg
 importance: 1
 category: past
 related_publications: false
 ---
 
+모델 기반의 초대형 복잡 시스템 분석 및 검증 SW 개발
 
 과제 수행
 - 기관: KAIST

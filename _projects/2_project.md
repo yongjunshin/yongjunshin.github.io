@@ -1,13 +1,14 @@
 ---
 layout: page
-title: Development and On-the-fly Verification of System of Systems for Reliable and Intelligent CPS Applications
-description: 신뢰적인 지능형 CPS 복합체계 개발 및 On-the-fly 검증기술
+title: On-the-fly verification
+description: Development and On-the-fly Verification of System of Systems for Reliable and Intelligent CPS Applications
 img: assets/img/cps_proj1.jpg
 importance: 4
 category: past
 related_publications: false
 ---
 
+신뢰적인 지능형 CPS 복합체계 개발 및 On-the-fly 검증기술
 
 과제 수행
 - 기관: KAIST

@@ -1,13 +1,14 @@
 ---
 layout: page
-title: Development of Dependable and Highly Usable Big Data Platform, and Analysis and Prediction Services Technology in Edge Clouds
-description: 엣지 클라우드에서 고신뢰 고사용성 빅데이터 플랫폼 및 분석 예측 서비스 기술 개발
+title: BECS
+description: Development of Dependable and Highly Usable Big Data Platform, and Analysis and Prediction Services Technology in Edge Clouds
 img: assets/img/becs.jpg
 importance: 2
 category: past
 related_publications: false
 ---
 
+엣지 클라우드에서 고신뢰 고사용성 빅데이터 플랫폼 및 분석 예측 서비스 기술 개발
 
 과제 수행
 - 기관: KAIST

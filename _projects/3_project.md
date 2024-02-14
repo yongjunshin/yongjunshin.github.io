@@ -1,13 +1,12 @@
 ---
 layout: page
-title: Cybersecurity Platform for Assessment and Training for Critical Infrastructures – Legacy to Digital Twin
-description: CybWin
+title: CybWin
+description: Cybersecurity Platform for Assessment and Training for Critical Infrastructures – Legacy to Digital Twin
 img: assets/img/1.jpg
 importance: 3
 category: past
 related_publications: false
 ---
-
 
 Participation
 - Institute: KAIST
