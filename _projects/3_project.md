@@ -1,16 +1,16 @@
 ---
 layout: page
-title: CybWin – Cybersecurity Platform for Assessment and Training for Critical Infrastructures – Legacy to Digital Twin
-description: 
+title: Cybersecurity Platform for Assessment and Training for Critical Infrastructures – Legacy to Digital Twin
+description: CybWin
 img: assets/img/1.jpg
 importance: 3
 category: past
 related_publications: false
 ---
 
+
 Participation
 - Institute: KAIST
-- Supervisor: Doo-Hwan Bae
 - Years: 2019~2020
 - Role: Critical infrastructure modeling
 

@@ -1,18 +1,18 @@
 ---
 layout: page
-title: 모델 기반의 초대형 복잡 시스템 분석 및 검증 SW 개발
-description: Software R&D for Model-based Analysis and Verification of Higher-order Large Complex System
+title: Software R&D for Model-based Analysis and Verification of Higher-order Large Complex System
+description: 모델 기반의 초대형 복잡 시스템 분석 및 검증 SW 개발
 img: assets/img/starlab1.jpg
 importance: 1
-category: present
-related_publications: true
+category: past
+related_publications: false
 ---
 
 
 과제 수행
-- 한국과학기술원 (KAIST)
-- 총괄책임자: 배두환
+- 기관: KAIST
 - 수행 기간: 2017~2022
+- 역할: SoS modeling and simulation, statistical verification, environment modeling
 
 과제 개요
 {% include figure.liquid path="assets/img/starlab1-1.jpg" title="SW Starlab overview" class="img-fluid rounded z-depth-1" %}
@@ -25,8 +25,6 @@ related_publications: true
 둘째, 모델링된 SoS를 운영 이전 및 운영 단계에서 시뮬레이션을 통해 평가하기 위한 SoS 통계적/동적 검증에 대한 연구가 있다. 
 셋째, 불확정성을 갖고 변화하는 환경에 적응하기 위한 적응형 검증 프레임워크 개발과 효율적인 런타임 검증을 수행할 수 있도록 돕는 SoS 변화 대응 검증 기술 연구가 함께 진행된다. 
 또한 앞서 개발된 기술을 활용하여 SoS 전반에 걸친 공학적 기법과 방법론을 적용할 수 있는 통합 검증 도구를 개발한다.
-
-
 
 연구 내용
 {% include figure.liquid path="assets/img/starlab2.jpg" title="SE for SoS research items" class="img-fluid rounded z-depth-1" %}
