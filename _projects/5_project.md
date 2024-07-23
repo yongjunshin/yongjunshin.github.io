@@ -25,3 +25,5 @@ related_publications: false
 
 연구 범위
 {% include figure.liquid path="assets/img/sdi2.png" title="SDI project scope" class="img-fluid rounded z-depth-1" %}
+
+오픈소스 저장소: https://github.com/open-SDI/Intro
