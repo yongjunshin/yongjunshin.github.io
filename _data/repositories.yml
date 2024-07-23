@@ -2,8 +2,9 @@ github_users:
   - yongjunshin
 
 github_repos:
+  - open-SDI/ci-cv-cd_framework
+  - open-SDI/sdi_turtlebot3_toy_app_ws
   - yongjunshin/ENVI
   - KAIST-SE-Lab/Platooning-LEGOs
   - KAIST-SE-Lab/PASTA
-  - KAIST-SE-Lab/SIMVA-SoS
   - yongjunshin/yongjunshin.github.io
