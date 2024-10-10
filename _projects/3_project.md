@@ -23,5 +23,4 @@ prediction and response. The strength of CybWin is also that it includes owners 
 This project is funded by the Research Council of Norway. The project consortium consists of IFE, Norwegian University of Science and Technology (NTNU), Secure-NOK AS, Avinor Flysikring AS, Statnett, KraftCERT, VTT Technical Research Centre of Finland Ltd, EUROCONTROL, and Korean Advanced Institute of Science and Technology (KAIST).
 
 Detailes
-- [Description 1](https://ife.no/en/project/cybwin-cybersecurity-platform-for-assessment-and-training-for-critical-infrastructures-legacy-to-digital-twin/)
-- [Description 2](https://prosjektbanken.forskningsradet.no/en/project/FORISS/287808?Kilde=FORISS&distribution=Ar&chart=bar&calcType=funding&Sprak=no&sortBy=date&sortOrder=desc&resultCount=30&offset=0&Prosjektleder=John+Eidar+Simensen)
+- [Description](https://prosjektbanken.forskningsradet.no/en/project/FORISS/287808?Kilde=FORISS&distribution=Ar&chart=bar&calcType=funding&Sprak=no&sortBy=date&sortOrder=desc&resultCount=30&offset=0&Prosjektleder=John+Eidar+Simensen)
