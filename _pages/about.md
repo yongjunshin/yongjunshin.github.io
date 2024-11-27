@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: PhD in software engineering from KAIST. \\Researcher, ETRI. 
+subtitle: PhD in software engineering from KAIST. Researcher, ETRI. 
 
 profile:
   align: right
@@ -24,9 +24,8 @@ I received my Ph.D. in software engineering at [Korea Advanced Institute of Scie
 My Ph.D. research focused on data-driven model generation for efficient verification of cyber-physical system (CPS) software (e.g., autonomous driving). 
 
 My research interests includes
-* simulation-based CPS software (e.g., autonomous driving) validation,
-* environment and uncertainty modeling,
-* self-adaptive systems modeling, 
-* statistical verification,
-* model-based software engineering, and
-* meta-modeling
+* model-based software engineering,
+* CPS software (e.g., autonomous driving, ROS 2 robotics) verification & validation,
+* statistical model checking,
+* self-adaptive systems and environment modeling,
+* CI/CD on edge computing
