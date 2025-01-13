@@ -7,6 +7,15 @@ nav: true
 nav_order: 3
 ---
 
+* **소프트웨어 정의형 모빌리티 디바이스와 인프라스트럭쳐 간 AI 분업 연산의 실시간 성능 검증 시스템 및 방법 (SYSTEM AND METHOD FOR REAL-TIME PERFORMANCE VERIFICATION OF COLLABORATIVE AI COMPUTING BETWEEN SOFTWARE-DEFINED MOBILITY DEVICE AND INFRASTRUCTURE)**
+    * Status: Application (출원)
+    * Patent agency: Korean Intellectual Property Office
+    * Patent number: 10-2024-0194553
+    * Inventors: 신용준, 강성주, 고동범
+    * Date issued: 23-12-2024
+
+---
+
 * **효율적인 사이버 물리 시스템 목표 검증을 위한 모방 학습을 활용한 가상 환경 모델 생성 기법 (DATA-DRIVEN ENVIRONMENT MODEL GENERATION USING IMITATION LERARING FOR EFFICIENT CPS GOAL VERIFICATION)**
     * Status: Application (출원)
     * Patent agency: Korean Intellectual Property Office
