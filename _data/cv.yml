@@ -67,19 +67,14 @@
   type: time_table
   contents:
     - title: Program Committee
-      year: 2025
+      year: 2024-2025
       description:
-        - The 13th ACM/IEEE International Workshop on Software Engineering for Systems-of-Systems and Software Ecosystems (SESoS)
+        - International Workshop on Software Engineering for Systems-of-Systems and Software Ecosystems (SESoS)
         - Paper review
     - title: Program Committee
-      year: 2024
+      year: 2024-2025
       description:
-        - The 12th ACM/IEEE International Workshop on Software Engineering for Systems-of-Systems and Software Ecosystems (SESoS)
-        - Paper review
-    - title: Program Committee
-      year: 2024
-      description:
-        - The 36th International Conference on Software Engineering & Knowledge Engineering (SEKE)
+        - International Conference on Software Engineering & Knowledge Engineering (SEKE)
         - Paper review
     - title: Reviewer
       year: 2023
