@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: PhD in software engineering from KAIST. Researcher, ETRI. 
+subtitle: Senior researcher @ ETRI | PhD @ KAIST
 
 profile:
   align: right
