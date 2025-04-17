@@ -8,7 +8,7 @@ categories: testCategory
 ---
 
 
-# 🧠 AI-Playing Lab – A Community for Scientist-Parents Exploring AI Through Play!
+# 🧠 AI-Playing Lab – A Community for Scientist-Parents Exploring AI for ways to PLAY with AI for our kids!
 
 I’m honored to lead **AI-Playing Lab**, a networking group of scientist-parents supported by the **Korea Institute of Human Resources Development in Science and Technology (KIRD)**.  
 Together, we’re on a mission to **explore creative ways to PLAY with AI for our kids**.
