@@ -15,13 +15,9 @@
 - title: Employment
   type: time_table
   contents:
-    - title: Senior Researcher
-      institution: Electronics and Telecommunications Research Institute (ETRI), South Korea
-      year: 2025 - Present
-      url: https://www.etri.re.kr/eng/main/main.etri
     - title: Researcher
       institution: Electronics and Telecommunications Research Institute (ETRI), South Korea
-      year: 2023 - 2025
+      year: 2023 - PRESENT
       url: https://www.etri.re.kr/eng/main/main.etri
         
 - title: Education
