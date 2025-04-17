@@ -3,8 +3,8 @@ layout: post
 title: Blog post template
 date: 2024-02-06 13:00:00
 description: a simple markdown blog post test.
-tags: template
-categories: template
+tags: Template
+categories: Test
 ---
 
 # Blog post test

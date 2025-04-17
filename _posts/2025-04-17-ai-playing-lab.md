@@ -4,7 +4,7 @@ title: AI-Playing Lab
 date: 2025-04-17 13:00:00
 description: a networking group of scientist-parents
 tags: AIForKids
-categories: research
+categories: Research
 ---
 
 # AI-Playing Lab – A Community for Scientist-Parents Exploring ways to PLAY with AI for our kids!
@@ -14,7 +14,7 @@ Together, we’re on a mission to explore creative ways to PLAY with AI for our 
 
 I’m excited to learn, share, and connect with fellow scientist-parents.
 
-<hr>
+---
 
 ## What We’re About
 
@@ -30,6 +30,6 @@ By collaborating, we believe we can create play experiences that our kids truly 
 - We host regular gatherings where children are welcome!  
 We also organize flexible, family-friendly meetups throughout the year so everyone can join in at their own pace.
 
-<hr>
+---
 
 You can follow along with our journey and activities on our [AI-Playing Lab website](https://ai-play-lab.notion.site/AI-1bf014b8f7488059ac9adf7c3d2940c1).
