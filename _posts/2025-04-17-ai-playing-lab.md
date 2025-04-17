@@ -1,33 +1,17 @@
 ---
 layout: post
-title: My first blog post test
-date: 2024-02-06 13:00:00
-description: a simple markdown blog post test.
-tags: testTag
-categories: testCategory
+title: AI-Playing Lab
+date: 2025-04-17 13:00:00
+description: a networking group of scientist-parents
+tags: AIForKids
+categories: research
 ---
 
-# Blog post test
-This is my first blog post.
+# 🧠 AI-Playing Lab – A Community for Scientist-Parents Exploring ways to PLAY with AI for our kids!
 
-## Ordered list test
-* item 1
-* item 2
-* item 3
+I’m honored to lead **AI-Playing Lab**, a networking group of scientist-parents supported by the **Korea Institute of Human Resources Development in Science and Technology (KIRD)**.  
+Together, we’re on a mission to **explore creative ways to PLAY with AI for our kids**.
 
-## Math test
-$$
-\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2
-$$
+I’m excited to learn, share, and connect with fellow scientist-parents.
 
-## Link test
-My homepage [GitHub page repository](https://github.com/yongjunshin/yongjunshin.github.io)
-
-## Code test
-```python
-def add(num1: int, num2: int) -> int:
-    """Add two numbers"""
-    num3 = num1 + num2
- 
-    return num3
-```
+## 🌟 What We’re About
