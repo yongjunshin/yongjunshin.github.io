@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Blog post template
+title: Blog post template 2
 date: 2025-04-17 13:00:00
 description: a simple markdown blog post test.
 tags: Template
