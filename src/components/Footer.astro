@@ -1,0 +1,14 @@
+---
+import { getSiteConfig } from "../lib/config";
+import SocialLinks from "./SocialLinks.astro";
+
+const cfg = getSiteConfig();
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <SocialLinks />
+    <p class="footer-copy">© {year} {cfg.copyright_name}</p>
+  </div>
+</footer>

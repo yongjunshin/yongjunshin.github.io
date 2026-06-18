@@ -1,0 +1,29 @@
+{
+  "name": "cv-website",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/newsreader": "^5.2.10",
+    "@retorquere/bibtex-parser": "^10.0.0",
+    "astro": "^6.4.8",
+    "js-yaml": "^4.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/js-yaml": "^4.0.9",
+    "@vitest/coverage-v8": "^4.1.9",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}

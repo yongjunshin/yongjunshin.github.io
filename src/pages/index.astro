@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import { getSiteConfig } from "../lib/config";
+
+const cfg = getSiteConfig();
+---
+
+<Base>
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="hero-name">{cfg.display_name}</h1>
+      <p class="hero-subtitle">{cfg.role_subtitle}</p>
+      <SocialLinks />
+    </div>
+  </section>
+</Base>

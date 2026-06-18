@@ -1,0 +1,35 @@
+---
+import { getSiteConfig } from "../lib/config";
+
+const cfg = getSiteConfig();
+const path = Astro.url.pathname;
+
+const items = [
+  { href: "/", label: "About" },
+  { href: "/cv/", label: "CV" },
+  { href: "/publications/", label: "Publications" },
+  { href: "/patents/", label: "Patents" },
+  { href: "/projects/", label: "Projects" },
+];
+
+function isActive(href: string): boolean {
+  const p = path.endsWith("/") || path === "/" ? path : path + "/";
+  if (href === "/") return p === "/";
+  return p.startsWith(href);
+}
+---
+
+<header class="nav">
+  <div class="nav-inner container">
+    <a href="/" class="nav-brand">{cfg.nav_brand}</a>
+    <nav class="nav-links" aria-label="Primary">
+      {
+        items.map((it) => (
+          <a href={it.href} class:list={["nav-link", { active: isActive(it.href) }]}>
+            {it.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

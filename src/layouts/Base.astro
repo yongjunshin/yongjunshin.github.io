@@ -1,0 +1,49 @@
+---
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/newsreader/400.css";
+import "@fontsource/newsreader/500.css";
+import "@fontsource/newsreader/600.css";
+import "@fontsource/newsreader/700.css";
+import "../styles/global.css";
+
+import { getSiteConfig } from "../lib/config";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const cfg = getSiteConfig();
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} · ${cfg.site_title}` : cfg.site_title;
+const desc = description ?? cfg.role_subtitle;
+const favicon =
+  "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>";
+---
+
+<!doctype html>
+<html lang="en" style={`--accent:${cfg.accent_color};`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href={favicon} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <Nav />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
