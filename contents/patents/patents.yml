@@ -1,0 +1,37 @@
+# =============================================================================
+#  특허 목록 (contents/patents/patents.yml)
+#  - 최신순 정렬은 date(YYYY-MM-DD) 기준으로 자동 처리됩니다.
+#  - 특허를 추가하려면 아래 형식대로 항목 하나를 더 넣으세요.
+# =============================================================================
+
+- title: 소프트웨어 정의형 모빌리티 디바이스와 인프라스트럭쳐 간 AI 분업 연산의 실시간 성능 검증 시스템 및 방법
+  title_en: SYSTEM AND METHOD FOR REAL-TIME PERFORMANCE VERIFICATION OF COLLABORATIVE AI COMPUTING BETWEEN SOFTWARE-DEFINED MOBILITY DEVICE AND INFRASTRUCTURE
+  status: Application (출원)
+  agency: Korean Intellectual Property Office
+  number: 10-2024-0194553
+  inventors: 신용준, 강성주, 고동범
+  date: "2024-12-23"
+
+- title: 효율적인 사이버 물리 시스템 목표 검증을 위한 모방 학습을 활용한 가상 환경 모델 생성 기법
+  title_en: DATA-DRIVEN ENVIRONMENT MODEL GENERATION USING IMITATION LERARING FOR EFFICIENT CPS GOAL VERIFICATION
+  status: Application (출원)
+  agency: Korean Intellectual Property Office
+  number: 10-2023-0083390
+  inventors: 배두환, 신용준, 신동환
+  date: "2023-06-28"
+
+- title: 적응형 시스템의 통계적 검증 기반 예측적 적응 기법
+  title_en: PROACTIVE ADAPTATION APPROACH BASED ON STATISTICAL MODEL CHECKING FOR SELF-ADAPTIVE SYSTEMS
+  status: Granted (등록)
+  agency: Korean Intellectual Property Office
+  number: 10-2021-0061164
+  inventors: 배두환, 신용준, 조은호
+  date: "2021-05-12"
+
+- title: 시스템 오브 시스템즈 시각적 모델링 방법 및 장치
+  title_en: System-of-Systems Graphical Modeling Method and Apparatus
+  status: Granted (등록)
+  agency: Korean Intellectual Property Office
+  number: 10-2020-0179505
+  inventors: 배두환, 백영민, Zelalem Belay, 신용준
+  date: "2020-12-21"

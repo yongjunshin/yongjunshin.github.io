@@ -1,0 +1,104 @@
+# =============================================================================
+#  CV 데이터 (contents/cv/cv.yml)
+#  - 섹션을 추가/수정하려면 아래 형식을 그대로 따라 항목만 넣으세요.
+#  - type: map      -> 이름/값 목록 (General Information)
+#  - type: timeline -> 기간(year)이 오른쪽에 정렬되는 시간표 (경력/학력/수상/활동)
+# =============================================================================
+
+- title: General Information
+  type: map
+  contents:
+    - name: Name
+      value: Yong-Jun Shin
+    - name: Position
+      value: Senior researcher, Electronics and Telecommunications Research Institute (ETRI), South Korea
+    - name: Email
+      value: yjshin@etri.re.kr
+    - name: Phone
+      value: (+82) 42-860-3815
+    - name: Homepage
+      value: https://yongjunshin.github.io/
+
+- title: Employment
+  type: timeline
+  contents:
+    - title: Senior Researcher
+      institution: Electronics and Telecommunications Research Institute (ETRI), South Korea
+      url: https://www.etri.re.kr/eng/main/main.etri
+      year: 2025 - Present
+    - title: Researcher
+      institution: Electronics and Telecommunications Research Institute (ETRI), South Korea
+      url: https://www.etri.re.kr/eng/main/main.etri
+      year: 2023 - 2025
+
+- title: Education
+  type: timeline
+  contents:
+    - title: PhD
+      institution: Korea Advanced Institute of Science and Technology (KAIST), South Korea
+      url: https://www.kaist.ac.kr/en/
+      year: 2017 - 2023
+      details:
+        - School of Computing
+        - "Advisor: Doo-Hwan Bae"
+        - "Area: Software engineering"
+        - "Thesis: Data-Driven Environment Model Generation Using Imitation Learning For Efficient Cyber-Physical System Goal Verification"
+    - title: BS
+      institution: Handong Global University, South Korea
+      url: https://www.handong.edu/eng/
+      year: 2013 - 2017
+      details:
+        - School of Computer Science and Electrical Engineering
+
+- title: Honors and Awards
+  type: timeline
+  contents:
+    - title: Best Artifact Paper Award
+      year: 2021
+      details:
+        - 16th Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS)
+        - "Platooning LEGOs: An Open Physical Exemplar for Engineering Self-Adaptive Cyber-Physical Systems-of-Systems"
+    - title: Best Paper Award
+      year: 2019
+      details:
+        - 2019 Korea Computer Congress (KCC)
+        - Analysis of Utilization Methods of Statistical Model Checking Results for Localizing Faults on System of Systems (시스템 오브 시스템즈의 오류 위치 추정을 위한 통계적 검증 결과 활용 기법 분석)
+    - title: Outstanding Paper Award
+      year: 2018
+      details:
+        - 2018 Korea Software Congress (KSC)
+        - Data-Driven Traffic Environment System-Dynamics Model Generation & Inference Method (데이터 기반 교통 흐름 시스템 다이내믹스 환경 모델 생성 및 추론 기법)
+    - title: Best Paper Award
+      year: 2018
+      details:
+        - 20th Korea Conference on Software Engineering (KCSE)
+        - Scenario-based Analysis of System-of-Systems Meta-model and Applicability Analysis for Statistical Verification (시스템 오브 시스템즈(SoS) 사례 분석을 통한 온톨로지 기반의 SoS 메타모델 개발)
+
+- title: Academic Service
+  type: timeline
+  contents:
+    - title: Board Member
+      year: 2025 - Present
+      details:
+        - Software Engineering Society, Korean Institute of Information Scientists and Engineers (KIISE)
+        - Board member of education department (2026-)
+    - title: Program Committee
+      year: 2024 - Present
+      details:
+        - International Workshop on Software Engineering for Systems-of-Systems and Software Ecosystems (SESoS)
+        - Paper review
+    - title: Program Committee
+      year: 2024 - Present
+      details:
+        - International Conference on Software Engineering & Knowledge Engineering (SEKE)
+        - Paper review
+    - title: Reviewer
+      year: 2023
+      details:
+        - "Journal of Software: Evolution and Process - special issue on 'Software Engineering for Systems-of-Systems and Software Ecosystems'"
+        - Paper review
+    - title: Live! Team Korea
+      year: 2020
+      details:
+        - The 42th International Conference on Software Engineering (ICSE)
+        - Conference virtualization
