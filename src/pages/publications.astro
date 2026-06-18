@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+import ClipboardScript from "../components/ClipboardScript.astro";
+import { getSiteConfig } from "../lib/config";
+import { getPublications } from "../lib/publications";
+
+const cfg = getSiteConfig();
+const pubs = getPublications();
+---
+
+<Base title="Publications" description="Publications in reverse chronological order.">
+  <h1 class="page-title">Publications</h1>
+  <p class="page-intro">{pubs.length} papers, in reverse chronological order.</p>
+
+  <div class="pub-list">
+    {pubs.map((pub) => <PublicationItem pub={pub} aliases={cfg.my_name_aliases} />)}
+  </div>
+
+  <ClipboardScript />
+</Base>

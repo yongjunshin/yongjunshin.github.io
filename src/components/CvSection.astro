@@ -1,0 +1,140 @@
+---
+import type { CvSection } from "../lib/cv";
+
+interface Props {
+  section: CvSection;
+}
+const { section } = Astro.props;
+---
+
+<section class="cv-section">
+  <h2 class="cv-section-title">{section.title}</h2>
+
+  {
+    section.type === "map" ? (
+      <dl class="cv-map">
+        {section.contents.map((item) => (
+          <div class="cv-map-row">
+            <dt>{item.name}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+    ) : (
+      <ul class="cv-timeline">
+        {section.contents.map((item) => (
+          <li class="cv-entry">
+            <div class="cv-entry-main">
+              <span class="cv-entry-title">
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.title}
+                  </a>
+                ) : (
+                  item.title
+                )}
+              </span>
+              {item.institution && <span class="cv-entry-inst">{item.institution}</span>}
+              {item.details && item.details.length > 0 && (
+                <ul class="cv-details">
+                  {item.details.map((d) => (
+                    <li>{d}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            {item.year && <span class="cv-entry-year">{item.year}</span>}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
+
+<style>
+  .cv-section {
+    margin-bottom: var(--sp-8);
+  }
+  .cv-section-title {
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    padding-bottom: var(--sp-2);
+    margin-bottom: var(--sp-4);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* map: 이름/값 */
+  .cv-map {
+    display: grid;
+    gap: var(--sp-2);
+    margin: 0;
+  }
+  .cv-map-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: var(--sp-4);
+  }
+  .cv-map-row dt {
+    color: var(--text-faint);
+    font-size: 0.92rem;
+  }
+  .cv-map-row dd {
+    margin: 0;
+    color: var(--text);
+  }
+
+  /* timeline: 제목 + 우측 정렬 연도 (전 섹션 일관) */
+  .cv-timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-5);
+  }
+  .cv-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--sp-4);
+    align-items: baseline;
+  }
+  .cv-entry-title {
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+  .cv-entry-title a {
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition);
+  }
+  .cv-entry-title a:hover {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+  }
+  .cv-entry-inst {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    margin-top: 1px;
+  }
+  .cv-details {
+    margin: var(--sp-2) 0 0;
+    padding-left: 1.1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .cv-details li {
+    margin-bottom: 2px;
+  }
+  .cv-entry-year {
+    color: var(--text-faint);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    text-align: right;
+  }
+  @media (max-width: 540px) {
+    .cv-map-row {
+      grid-template-columns: 96px 1fr;
+      gap: var(--sp-3);
+    }
+  }
+</style>

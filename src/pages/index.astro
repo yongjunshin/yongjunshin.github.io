@@ -1,17 +1,70 @@
 ---
+import { getCollection, getEntry, render } from "astro:content";
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import SocialLinks from "../components/SocialLinks.astro";
+import NewsList from "../components/NewsList.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+import ClipboardScript from "../components/ClipboardScript.astro";
 import { getSiteConfig } from "../lib/config";
+import { getSelectedPublications } from "../lib/publications";
+import { sortNewsEntries } from "../lib/sort";
+import profileImg from "../../contents/home/profile.jpg";
 
 const cfg = getSiteConfig();
+
+const intro = await getEntry("home", "intro");
+const IntroContent = intro ? (await render(intro)).Content : null;
+
+const allNews = await getCollection("news");
+const news = sortNewsEntries(allNews).slice(0, cfg.home_news_count);
+
+const selected = getSelectedPublications();
 ---
 
 <Base>
   <section class="hero">
+    <Image src={profileImg} alt={cfg.display_name} width={300} class="hero-photo" />
     <div class="hero-text">
       <h1 class="hero-name">{cfg.display_name}</h1>
       <p class="hero-subtitle">{cfg.role_subtitle}</p>
       <SocialLinks />
     </div>
   </section>
+
+  {
+    IntroContent && (
+      <div class="intro prose">
+        <IntroContent />
+      </div>
+    )
+  }
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">News</h2>
+      <a class="section-link" href="/news/">All news →</a>
+    </div>
+    <NewsList items={news} />
+  </section>
+
+  {
+    selected.length > 0 && (
+      <section class="section">
+        <div class="section-head">
+          <h2 class="section-title">Highlighted Publications</h2>
+          <a class="section-link" href="/publications/">
+            All publications →
+          </a>
+        </div>
+        <div class="pub-list">
+          {selected.map((pub) => (
+            <PublicationItem pub={pub} aliases={cfg.my_name_aliases} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <ClipboardScript />
 </Base>

@@ -1,0 +1,41 @@
+---
+// BibTeX 복사 버튼 동작 (이벤트 위임, 페이지당 1회 로드). 외부 의존성 0.
+---
+
+<script>
+  function wireClipboard() {
+    document.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      const btn = target.closest<HTMLButtonElement>(".js-bibtex");
+      if (!btn) return;
+      const source = btn.parentElement?.parentElement?.querySelector<HTMLElement>(".bibtex-source");
+      if (!source || !source.textContent) return;
+      navigator.clipboard
+        .writeText(source.textContent.trim())
+        .then(() => {
+          const original = btn.textContent;
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          window.setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove("copied");
+          }, 1500);
+        })
+        .catch(() => {
+          btn.textContent = "Copy failed";
+          window.setTimeout(() => {
+            btn.textContent = "BibTeX";
+          }, 1500);
+        });
+    });
+  }
+  wireClipboard();
+</script>
+
+<style is:global>
+  .btn.copied {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+</style>

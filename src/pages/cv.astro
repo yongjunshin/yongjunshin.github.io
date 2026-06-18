@@ -1,0 +1,70 @@
+---
+import Base from "../layouts/Base.astro";
+import CvSection from "../components/CvSection.astro";
+import { getSiteConfig } from "../lib/config";
+import { getCv, getCvPdfUrl } from "../lib/cv";
+
+const cfg = getSiteConfig();
+const sections = getCv();
+const pdfUrl = getCvPdfUrl(cfg.cv_pdf_filename);
+---
+
+<Base title="CV" description="Curriculum Vitae">
+  <div class="cv-head">
+    <h1 class="page-title">Curriculum Vitae</h1>
+    {
+      pdfUrl && (
+        <a class="btn btn-primary cv-download" href={pdfUrl} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+          </svg>
+          Download PDF
+        </a>
+      )
+    }
+  </div>
+
+  {sections.map((section) => <CvSection section={section} />)}
+
+  <section class="cv-seealso">
+    <h2 class="section-title">See also</h2>
+    <div class="seealso-links">
+      <a class="btn" href="/publications/">Publications →</a>
+      <a class="btn" href="/patents/">Patents →</a>
+      <a class="btn" href="/projects/">Projects →</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cv-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--sp-6);
+  }
+  .cv-head .page-title {
+    margin-bottom: 0;
+  }
+  .cv-download svg {
+    width: 15px;
+    height: 15px;
+  }
+  .cv-seealso {
+    margin-top: var(--sp-8);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--border);
+  }
+  .cv-seealso .section-title {
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    margin-bottom: var(--sp-4);
+  }
+  .seealso-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+</style>

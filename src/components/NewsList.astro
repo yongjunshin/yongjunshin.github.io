@@ -1,0 +1,75 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import { formatNewsDate } from "../lib/format";
+
+interface Props {
+  items: CollectionEntry<"news">[];
+}
+const { items } = Astro.props;
+
+const rendered = await Promise.all(
+  items.map(async (entry) => ({
+    date: entry.data.date,
+    Content: (await render(entry)).Content,
+  })),
+);
+---
+
+<ul class="news-list">
+  {
+    rendered.map((n) => {
+      const Body = n.Content;
+      return (
+        <li class="news-item">
+          <time class="news-date" datetime={n.date.toISOString()}>
+            {formatNewsDate(n.date)}
+          </time>
+          <div class="news-body">
+            <Body />
+          </div>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .news-item {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: var(--sp-4);
+    align-items: baseline;
+  }
+  .news-date {
+    color: var(--text-faint);
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+  .news-body {
+    color: var(--text);
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+  .news-body :global(p) {
+    margin: 0;
+  }
+  .news-body :global(a) {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent-border);
+  }
+  @media (max-width: 540px) {
+    .news-item {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+</style>

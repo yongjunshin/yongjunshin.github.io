@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import NewsList from "../components/NewsList.astro";
+import { sortNewsEntries } from "../lib/sort";
+
+const news = sortNewsEntries(await getCollection("news"));
+---
+
+<Base title="News" description="News and updates.">
+  <h1 class="page-title">News</h1>
+  <p class="page-intro">All updates, most recent first.</p>
+  <NewsList items={news} />
+</Base>

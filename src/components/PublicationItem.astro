@@ -1,0 +1,138 @@
+---
+import { authorDisplay, isMe } from "../lib/authors";
+import type { ResolvedPublication } from "../lib/publications";
+
+interface Props {
+  pub: ResolvedPublication;
+  aliases: string[];
+}
+const { pub, aliases } = Astro.props;
+---
+
+<article class="pub">
+  {
+    pub.previewUrl && (
+      <div class="pub-thumb">
+        <img src={pub.previewUrl} alt="" loading="lazy" decoding="async" />
+      </div>
+    )
+  }
+  <div class="pub-body">
+    <h3 class="pub-title">{pub.title}</h3>
+    <p class="pub-authors">
+      {
+        pub.authors.map((a, i) => (
+          <Fragment>
+            {i > 0 ? ", " : ""}
+            <span class:list={["author", { me: isMe(a, aliases) }]}>{authorDisplay(a)}</span>
+          </Fragment>
+        ))
+      }
+    </p>
+    {
+      (pub.venue || pub.year > 0) && (
+        <p class="pub-venue">
+          {pub.venue}
+          {pub.venue && pub.year > 0 ? " · " : ""}
+          {pub.year > 0 ? pub.year : ""}
+        </p>
+      )
+    }
+    <div class="btn-row">
+      <button class="btn js-bibtex" type="button" aria-label="Copy BibTeX">BibTeX</button>
+      {
+        pub.pdfUrl && (
+          <a class="btn" href={pub.pdfUrl} target="_blank" rel="noopener noreferrer">
+            PDF
+          </a>
+        )
+      }
+      {
+        pub.website && (
+          <a class="btn" href={pub.website} target="_blank" rel="noopener noreferrer">
+            Website
+          </a>
+        )
+      }
+      {
+        pub.slidesUrl && (
+          <a class="btn" href={pub.slidesUrl} target="_blank" rel="noopener noreferrer">
+            Slides
+          </a>
+        )
+      }
+      {
+        pub.posterUrl && (
+          <a class="btn" href={pub.posterUrl} target="_blank" rel="noopener noreferrer">
+            Poster
+          </a>
+        )
+      }
+      {
+        pub.supp && (
+          <a class="btn" href={pub.supp} target="_blank" rel="noopener noreferrer">
+            Supp.
+          </a>
+        )
+      }
+    </div>
+    <pre class="bibtex-source" hidden>{pub.bibtex}</pre>
+  </div>
+</article>
+
+<style>
+  .pub {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--sp-5);
+    padding: var(--sp-5) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub:last-child {
+    border-bottom: 0;
+  }
+  .pub-thumb {
+    width: 120px;
+  }
+  .pub-thumb img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-subtle);
+  }
+  .pub-title {
+    font-family: var(--font-serif);
+    font-size: 1.06rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: var(--sp-1);
+  }
+  .pub-authors {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+  .author.me {
+    color: var(--text-strong);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  .pub-venue {
+    font-size: 0.88rem;
+    color: var(--text-faint);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+  @media (max-width: 560px) {
+    .pub {
+      grid-template-columns: 1fr;
+      gap: var(--sp-3);
+    }
+    .pub-thumb {
+      width: 132px;
+    }
+  }
+</style>

@@ -1,0 +1,76 @@
+---
+interface Props {
+  href: string;
+  period: string;
+  title: string;
+  description: string;
+}
+const { href, period, title, description } = Astro.props;
+---
+
+<a class="proj-row" href={href}>
+  <span class="proj-period">{period}</span>
+  <span class="proj-main">
+    <span class="proj-title">
+      {title}
+      <span class="proj-arrow" aria-hidden="true">→</span>
+    </span>
+    <span class="proj-desc">{description}</span>
+  </span>
+</a>
+
+<style>
+  .proj-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--sp-5);
+    padding: var(--sp-5) 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .proj-row:last-child {
+    border-bottom: 0;
+  }
+  .proj-period {
+    color: var(--text-faint);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .proj-title {
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    transition: color var(--transition);
+  }
+  .proj-arrow {
+    color: var(--accent);
+    margin-left: 0.25rem;
+    opacity: 0;
+    transform: translateX(-4px);
+    display: inline-block;
+    transition: opacity var(--transition), transform var(--transition);
+  }
+  .proj-desc {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  .proj-row:hover .proj-title {
+    color: var(--accent);
+  }
+  .proj-row:hover .proj-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  @media (max-width: 540px) {
+    .proj-row {
+      grid-template-columns: 1fr;
+      gap: var(--sp-1);
+    }
+  }
+</style>

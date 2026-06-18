@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const meta = [d.period, d.institution].filter(Boolean).join("  ·  ");
+---
+
+<Base title={d.title} description={d.description}>
+  <a class="back-link" href="/projects/">← Projects</a>
+
+  <header class="proj-detail-head">
+    <h1 class="page-title">{d.title}</h1>
+    <p class="proj-detail-desc">{d.description}</p>
+    {meta && <p class="proj-detail-meta">{meta}</p>}
+  </header>
+
+  <div class="prose project-body">
+    <Content />
+  </div>
+</Base>
+
+<style>
+  .back-link {
+    display: inline-block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--sp-5);
+    transition: color var(--transition);
+  }
+  .back-link:hover {
+    color: var(--accent);
+  }
+  .proj-detail-head {
+    margin-bottom: var(--sp-6);
+    padding-bottom: var(--sp-5);
+    border-bottom: 1px solid var(--border);
+  }
+  .proj-detail-desc {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin: var(--sp-2) 0 var(--sp-3);
+  }
+  .proj-detail-meta {
+    color: var(--text-faint);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    margin: 0;
+  }
+</style>

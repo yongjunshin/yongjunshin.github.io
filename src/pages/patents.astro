@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import PatentItem from "../components/PatentItem.astro";
+import { getPatents } from "../lib/patents";
+
+const patents = getPatents();
+---
+
+<Base title="Patents" description="Patents in reverse chronological order.">
+  <h1 class="page-title">Patents</h1>
+  <p class="page-intro">In reverse chronological order.</p>
+
+  <div class="patent-list">
+    {patents.map((patent) => <PatentItem patent={patent} />)}
+  </div>
+</Base>

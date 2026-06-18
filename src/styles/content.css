@@ -1,0 +1,59 @@
+/* =============================================================================
+   Prose (마크다운 본문) + 콘텐츠 페이지 공통 스타일
+   ============================================================================= */
+.intro {
+  margin-top: var(--sp-6);
+}
+
+.prose {
+  color: var(--text);
+}
+.prose p {
+  margin-bottom: var(--sp-4);
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 var(--sp-4);
+  padding-left: 1.3rem;
+}
+.prose li {
+  margin-bottom: var(--sp-1);
+  line-height: 1.6;
+}
+.prose li::marker {
+  color: var(--text-faint);
+}
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin: var(--sp-6) 0 var(--sp-2);
+}
+.prose h4 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.prose strong {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.prose img {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: var(--sp-4) 0;
+  box-shadow: var(--shadow-sm);
+}
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  background: var(--bg-sunken);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* 리스트 컨테이너 */
+.pub-list,
+.patent-list,
+.proj-list {
+  margin-top: var(--sp-2);
+}

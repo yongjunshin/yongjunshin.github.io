@@ -1,0 +1,80 @@
+---
+import { formatPatentDate } from "../lib/format";
+import type { Patent } from "../lib/patents";
+
+interface Props {
+  patent: Patent;
+}
+const { patent } = Astro.props;
+
+const meta: { label: string; value: string }[] = [
+  { label: "Status", value: patent.status },
+  { label: "Agency", value: patent.agency },
+  { label: "Number", value: patent.number },
+  { label: "Inventors", value: patent.inventors },
+  { label: "Date", value: formatPatentDate(patent.date) },
+];
+---
+
+<article class="patent">
+  <h3 class="patent-title">{patent.title}</h3>
+  {patent.title_en && <p class="patent-title-en">{patent.title_en}</p>}
+  <dl class="patent-meta">
+    {
+      meta.map((m) => (
+        <div class="patent-meta-row">
+          <dt>{m.label}</dt>
+          <dd>{m.value}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</article>
+
+<style>
+  .patent {
+    padding: var(--sp-5) 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .patent:last-child {
+    border-bottom: 0;
+  }
+  .patent-title {
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-strong);
+    margin-bottom: var(--sp-1);
+  }
+  .patent-title-en {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--sp-3);
+    line-height: 1.45;
+  }
+  .patent-meta {
+    display: grid;
+    gap: var(--sp-1);
+    margin: 0;
+  }
+  .patent-meta-row {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: var(--sp-4);
+    font-size: 0.9rem;
+  }
+  .patent-meta-row dt {
+    color: var(--text-faint);
+  }
+  .patent-meta-row dd {
+    margin: 0;
+    color: var(--text);
+  }
+  @media (max-width: 540px) {
+    .patent-meta-row {
+      grid-template-columns: 84px 1fr;
+      gap: var(--sp-3);
+    }
+  }
+</style>

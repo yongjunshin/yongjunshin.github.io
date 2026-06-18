@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import ProjectRow from "../../components/ProjectRow.astro";
+import { sortProjects } from "../../lib/sort";
+
+const projects = await getCollection("projects");
+const sorted = sortProjects(projects.map((p) => ({ ...p.data, id: p.id })));
+---
+
+<Base title="Projects" description="Research projects in reverse chronological order.">
+  <h1 class="page-title">Projects</h1>
+  <p class="page-intro">In reverse chronological order.</p>
+
+  <div class="proj-list">
+    {
+      sorted.map((p) => (
+        <ProjectRow
+          href={`/projects/${p.id}/`}
+          period={p.period}
+          title={p.title}
+          description={p.description}
+        />
+      ))
+    }
+  </div>
+</Base>
