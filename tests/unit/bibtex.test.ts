@@ -1,11 +1,32 @@
 import { describe, it, expect } from "vitest";
 import {
   fieldToString,
+  fieldToBibtexValue,
   pickVenue,
   authorsToBibtex,
   serializeEntry,
   parseBibtex,
 } from "../../src/lib/bibtex";
+
+describe("fieldToBibtexValue", () => {
+  it("serializes creator arrays (author/editor) as names", () => {
+    expect(fieldToBibtexValue("editor", [{ lastName: "Doe", firstName: "John" }])).toBe(
+      "Doe, John",
+    );
+  });
+  it("joins multi-value arrays in full (no truncation, e.g. keywords)", () => {
+    expect(fieldToBibtexValue("keywords", ["a", "b", "c"])).toBe("a, b, c");
+  });
+  it("returns undefined for empty array and null/undefined", () => {
+    expect(fieldToBibtexValue("keywords", [])).toBeUndefined();
+    expect(fieldToBibtexValue("x", null)).toBeUndefined();
+    expect(fieldToBibtexValue("x", undefined)).toBeUndefined();
+  });
+  it("restores -- in page ranges and passes other scalars through", () => {
+    expect(fieldToBibtexValue("pages", "904–910")).toBe("904--910");
+    expect(fieldToBibtexValue("title", "Hello")).toBe("Hello");
+  });
+});
 
 describe("fieldToString", () => {
   it("returns undefined for undefined and null", () => {
@@ -64,7 +85,7 @@ describe("serializeEntry", () => {
 
 describe("parseBibtex", () => {
   const bib = `
-@article{a, title={Hello World}, author={Shin, Yong-Jun and Lee, Junhee}, journal={J Foo}, year={2024}, selected={true}, pdf={a.pdf}, preview={a.jpg}, website={http://x}, slides={s.pdf}, poster={p.pdf}, supp={http://s}}
+@article{a, title={Hello World}, author={Shin, Yong-Jun and Lee, Junhee}, journal={J Foo}, year={2024}, keywords={alpha, beta, gamma}, selected={true}, pdf={a.pdf}, preview={a.jpg}, website={http://x}, slides={s.pdf}, poster={p.pdf}, supp={http://s}}
 @inproceedings{c, title={Conf Paper}, booktitle={Proc X}, year={2020}, selected={false}}
 @phdthesis{d, title={Thesis}, publisher={KAIST}}
 @misc{e}
@@ -92,6 +113,11 @@ describe("parseBibtex", () => {
     expect(a.poster).toBe("p.pdf");
     expect(a.supp).toBe("http://s");
     expect(a.bibtex).toContain("@article{a,");
+    // 다중값 keywords 가 전부 보존되어야 한다 (회귀 방지)
+    expect(a.bibtex).toContain("keywords = {alpha, beta, gamma}");
+    // 커스텀 필드는 복사용 BibTeX 에서 제거
+    expect(a.bibtex).not.toContain("selected");
+    expect(a.bibtex).not.toContain("preview");
   });
   it("handles selected=false and booktitle venue", () => {
     const c = pubs.find((p) => p.key === "c")!;

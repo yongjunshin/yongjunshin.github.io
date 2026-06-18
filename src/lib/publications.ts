@@ -38,7 +38,10 @@ const pdfs = basenameMap(pdfMods);
 const slides = basenameMap(slideMods);
 
 function lookup(map: Map<string, string>, filename?: string): string | undefined {
-  return filename ? map.get(filename.toLowerCase()) : undefined;
+  if (!filename) return undefined;
+  // 외부 URL(예: pdf={https://arxiv.org/...})은 그대로 사용 (al-folio 호환)
+  if (filename.includes("://")) return filename;
+  return map.get(filename.toLowerCase());
 }
 
 /** 에셋 URL 이 해석된 논문. */

@@ -5,8 +5,10 @@ import type { ResolvedPublication } from "../lib/publications";
 interface Props {
   pub: ResolvedPublication;
   aliases: string[];
+  headingLevel?: number;
 }
-const { pub, aliases } = Astro.props;
+const { pub, aliases, headingLevel = 3 } = Astro.props;
+const TitleTag = `h${headingLevel}`;
 ---
 
 <article class="pub">
@@ -18,7 +20,7 @@ const { pub, aliases } = Astro.props;
     )
   }
   <div class="pub-body">
-    <h3 class="pub-title">{pub.title}</h3>
+    <TitleTag class="pub-title">{pub.title}</TitleTag>
     <p class="pub-authors">
       {
         pub.authors.map((a, i) => (

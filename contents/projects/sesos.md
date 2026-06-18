@@ -11,13 +11,13 @@ importance: 1
 
 모델 기반의 초대형 복잡 시스템 분석 및 검증 SW 개발
 
-#### 과제 수행
+## 과제 수행
 
 - 기관: KAIST
 - 수행 기간: 2017~2022
 - 역할: SoS modeling and simulation, statistical verification, environment modeling
 
-#### 과제 개요
+## 과제 개요
 
 ![SW Starlab overview](./images/starlab1-1.jpg)
 
@@ -30,10 +30,10 @@ importance: 1
 셋째, 불확정성을 갖고 변화하는 환경에 적응하기 위한 적응형 검증 프레임워크 개발과 효율적인 런타임 검증을 수행할 수 있도록 돕는 SoS 변화 대응 검증 기술 연구가 함께 진행된다.
 또한 앞서 개발된 기술을 활용하여 SoS 전반에 걸친 공학적 기법과 방법론을 적용할 수 있는 통합 검증 도구를 개발한다.
 
-#### 연구 내용
+## 연구 내용
 
 ![SE for SoS research items](./images/starlab2.jpg)
 
-#### 산출물
+## 산출물
 
 - [Open source repositories](https://github.com/orgs/KAIST-SE-Lab/repositories)

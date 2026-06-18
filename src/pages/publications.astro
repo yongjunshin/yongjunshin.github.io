@@ -14,7 +14,7 @@ const pubs = getPublications();
   <p class="page-intro">{pubs.length} papers, in reverse chronological order.</p>
 
   <div class="pub-list">
-    {pubs.map((pub) => <PublicationItem pub={pub} aliases={cfg.my_name_aliases} />)}
+    {pubs.map((pub) => <PublicationItem pub={pub} aliases={cfg.my_name_aliases} headingLevel={2} />)}
   </div>
 
   <ClipboardScript />

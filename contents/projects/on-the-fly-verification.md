@@ -11,17 +11,17 @@ importance: 4
 
 신뢰적인 지능형 CPS 복합체계 개발 및 On-the-fly 검증기술
 
-#### 과제 수행
+## 과제 수행
 
 - 기관: KAIST
 - 수행 기간: 2017~2019
 - 역할: Statistical verification, Fault localization
 
-#### 과제 개요
+## 과제 개요
 
 ![On-the-fly verification project overview](./images/cps_proj1.jpg)
 
-#### 연구 내용
+## 연구 내용
 
 - 1세부: CPS 환경 특성을 고려한 SW 자산 모델링
   - CPS에 필요한 다품질속성 도출 및 사이버, 현실공간 SW 아키텍처모델링 기술 개발
@@ -40,6 +40,6 @@ importance: 4
   - CPS 어플리케이션의 SDLC와 안전 생명주기 내 산출물간의 수직적/수평적 관계 분석
   - CPS 어플리케이션의 SDLC와 안전 생명주기간 추적성 프레임워크 정의
 
-#### 상세 내용
+## 상세 내용
 
 - [보고서](https://scienceon.kisti.re.kr/srch/selectPORSrchReport.do?cn=TRKO201900019464&dbt=TRKO#;)

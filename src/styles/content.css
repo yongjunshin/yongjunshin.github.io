@@ -27,11 +27,17 @@
 .prose h3,
 .prose h4 {
   margin: var(--sp-6) 0 var(--sp-2);
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.prose h2 {
+  font-size: 1.18rem;
+}
+.prose h3 {
+  font-size: 1.06rem;
 }
 .prose h4 {
   font-size: var(--fs-h3);
-  font-weight: 600;
-  color: var(--text-strong);
 }
 .prose strong {
   font-weight: 600;

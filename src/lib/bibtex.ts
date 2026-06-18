@@ -69,6 +69,27 @@ export function authorsToBibtex(authors: Author[]): string {
     .join(" and ");
 }
 
+/** 이름 객체 배열로 파싱되는 creator 필드(author/editor 등). */
+const CREATOR_FIELDS = new Set(["author", "editor", "editors"]);
+
+/**
+ * 한 필드 값을 BibTeX 값 문자열로 직렬화.
+ * - creator 필드: 이름 배열 → "Last, First and ..."
+ * - 그 외 배열(예: keywords): 첫 값만 남기지 않고 전부 보존 (', ' join)
+ * - pages: 파서가 바꾼 en-dash(–) 를 LaTeX 범위(--)로 복원
+ */
+export function fieldToBibtexValue(key: string, value: unknown): string | undefined {
+  if (CREATOR_FIELDS.has(key) && Array.isArray(value)) {
+    return authorsToBibtex(value as Author[]);
+  }
+  if (Array.isArray(value)) {
+    return value.length > 0 ? value.map((v) => String(v)).join(", ") : undefined;
+  }
+  if (value === undefined || value === null) return undefined;
+  const s = String(value);
+  return key === "pages" ? s.replace(/–/g, "--") : s;
+}
+
 interface RawEntry {
   type: string;
   key: string;
@@ -80,11 +101,7 @@ export function serializeEntry(entry: RawEntry): string {
   const parts: string[] = [];
   for (const [k, v] of Object.entries(entry.fields)) {
     if (CUSTOM_FIELDS.has(k)) continue;
-    if (k === "author") {
-      parts.push(`  author = {${authorsToBibtex(v as Author[])}}`);
-      continue;
-    }
-    const val = fieldToString(v);
+    const val = fieldToBibtexValue(k, v);
     if (val !== undefined) parts.push(`  ${k} = {${val}}`);
   }
   return `@${entry.type}{${entry.key},\n${parts.join(",\n")}\n}`;
