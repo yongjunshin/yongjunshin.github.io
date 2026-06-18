@@ -10,7 +10,7 @@ I received my Ph.D. in software engineering at [Korea Advanced Institute of Scie
 
 My Ph.D. research focused on data-driven model generation for efficient verification of cyber-physical system (CPS) software (e.g., autonomous driving).
 
-My research interests include:
+My research interests includes
 
 - model-based software engineering,
 - SW verification and validation,
