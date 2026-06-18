@@ -1,6 +1,6 @@
 import type { Author } from "./bibtex";
 
-/** 화면 표기용 저자 이름: "Yong-Jun Shin" (firstName 없으면 lastName 만). */
+/** 화면 표기용 저자 이름: "First Last" (firstName 없으면 lastName 만). */
 export function authorDisplay(a: Author): string {
   return a.firstName ? `${a.firstName} ${a.lastName}` : a.lastName;
 }
@@ -12,7 +12,7 @@ export function normalizeName(s: string): string {
 
 /**
  * 이 저자가 사이트 주인인지 판정 (configs 의 my_name_aliases 와 매칭).
- * "Yong-Jun Shin" / "Shin, Yong-Jun" / "Shin Yong-Jun" 등 다양한 표기를 인식.
+ * "First Last" / "Last, First" / "Last First" 등 다양한 표기를 인식.
  */
 export function isMe(a: Author, aliases: string[]): boolean {
   const candidates = [
