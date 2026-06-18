@@ -10,6 +10,7 @@
     "check": "astro check",
     "test": "vitest run",
     "test:cov": "vitest run --coverage",
+    "test:scenario": "node tests/scenario/run-scenario.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {
