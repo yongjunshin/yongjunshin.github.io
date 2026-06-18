@@ -31,6 +31,7 @@ img,
 picture,
 svg {
   max-width: 100%;
+  height: auto; /* 원본 비율 보존 (세로로 늘어나는 현상 방지) */
   display: block;
 }
 a {
@@ -288,9 +289,8 @@ p:last-child {
 }
 .hero-photo {
   width: 150px;
-  height: 150px;
+  height: auto; /* 얼굴 사진이 잘리지 않도록 원본 비율 유지 */
   border-radius: var(--radius);
-  object-fit: cover;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
 }
@@ -335,7 +335,6 @@ p:last-child {
   }
   .hero-photo {
     width: 110px;
-    height: 110px;
   }
   .nav-brand {
     font-size: 1.05rem;

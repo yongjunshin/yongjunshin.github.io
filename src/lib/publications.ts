@@ -4,38 +4,26 @@ import { parseBibtex, type Publication } from "./bibtex";
 import { sortByYearDesc } from "./sort";
 
 /**
- * 논문 에셋(preview/pdf/slides)은 contents/publications/ 안에 보관하고,
- * Vite 의 import.meta.glob 으로 빌드 시 해시 URL 로 변환한다.
- * (개인 에셋이 contents/ 에 있으면서도 정상 서빙됨 — 제약 C-6)
+ * 논문 에셋(preview/pdf/slides)은 public/publications/ 아래에 보관한다.
+ * public/ 의 파일은 dev·프로덕션 모두에서 안정적으로 정적 서빙된다(브라우저 네비게이션 포함).
+ * 빌드/SSR 시 디렉토리를 읽어 {소문자 파일명 → URL} 맵을 만든다 (대소문자 불일치에도 견고).
  */
-const previewMods = import.meta.glob("/contents/publications/previews/*", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
-const pdfMods = import.meta.glob("/contents/publications/pdfs/*", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
-const slideMods = import.meta.glob("/contents/publications/slides/*", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
+const PUBLIC_DIR = path.resolve(process.cwd(), "public");
 
-/** {경로: URL} → {소문자 파일명: URL} (대소문자 불일치에도 견고하게 매칭). */
-function basenameMap(mods: Record<string, string>): Map<string, string> {
-  const m = new Map<string, string>();
-  for (const [key, url] of Object.entries(mods)) {
-    m.set(path.basename(key).toLowerCase(), url);
+function buildUrlMap(relDir: string, urlBase: string): Map<string, string> {
+  const dir = path.join(PUBLIC_DIR, relDir);
+  const map = new Map<string, string>();
+  if (fs.existsSync(dir)) {
+    for (const file of fs.readdirSync(dir)) {
+      map.set(file.toLowerCase(), `${urlBase}/${encodeURIComponent(file)}`);
+    }
   }
-  return m;
+  return map;
 }
 
-const previews = basenameMap(previewMods);
-const pdfs = basenameMap(pdfMods);
-const slides = basenameMap(slideMods);
+const previews = buildUrlMap("publications/previews", "/publications/previews");
+const pdfs = buildUrlMap("publications/pdfs", "/publications/pdfs");
+const slides = buildUrlMap("publications/slides", "/publications/slides");
 
 function lookup(map: Map<string, string>, filename?: string): string | undefined {
   if (!filename) return undefined;

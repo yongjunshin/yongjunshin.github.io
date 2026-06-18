@@ -17,7 +17,7 @@
 
 | 하고 싶은 것 | 어디를 |
 |---|---|
-| 논문 추가 | `contents/publications/papers.bib` 에 BibTeX 추가 (+ preview/pdf 파일) |
+| 논문 추가 | `contents/publications/papers.bib` 에 BibTeX 추가 (PDF·미리보기 파일은 `public/publications/`) |
 | 뉴스 추가 | `contents/news/YYYY-MM-DD.md` 새 파일 |
 | 프로젝트 추가 | `contents/projects/<이름>.md` |
 | 특허 추가 | `contents/patents/patents.yml` |

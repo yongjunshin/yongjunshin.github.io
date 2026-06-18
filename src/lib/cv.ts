@@ -23,16 +23,8 @@ export function getCv(): CvSection[] {
   return yaml.load(fs.readFileSync(file, "utf-8")) as CvSection[];
 }
 
-/** configs 의 cv_pdf_filename 에 해당하는 PDF URL 을 contents/cv/ 에서 해석. */
-const cvPdfMods = import.meta.glob("/contents/cv/*.pdf", {
-  eager: true,
-  query: "?url",
-  import: "default",
-}) as Record<string, string>;
-
+/** configs 의 cv_pdf_filename 에 해당하는 PDF URL 을 public/cv/ 에서 해석. */
 export function getCvPdfUrl(filename: string): string | undefined {
-  for (const [key, url] of Object.entries(cvPdfMods)) {
-    if (key.endsWith("/" + filename)) return url;
-  }
-  return undefined;
+  const file = path.resolve(process.cwd(), "public/cv", filename);
+  return fs.existsSync(file) ? `/cv/${encodeURIComponent(filename)}` : undefined;
 }
