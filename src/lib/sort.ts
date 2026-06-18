@@ -11,17 +11,28 @@ interface ProjectLike {
   importance?: number;
 }
 
-/**
- * 프로젝트: 시작연도 내림차순 → 종료연도 내림차순(진행중=Infinity 우선) → importance 오름차순.
- */
+/** 종료연도 정렬 키 (없음/진행중 = +Infinity 로 취급해 최신 취급). */
+export function endYearKey(end?: number | null): number {
+  return end ?? Number.POSITIVE_INFINITY;
+}
+
+/** importance 정렬 키 (없으면 가장 뒤로). */
+export function importanceKey(importance?: number): number {
+  return importance ?? Number.POSITIVE_INFINITY;
+}
+
+/** 프로젝트 비교자: 시작연도 ↓ → 종료연도 ↓(진행중 우선) → importance ↑. */
+export function compareProjects(a: ProjectLike, b: ProjectLike): number {
+  if (b.start_year !== a.start_year) return b.start_year - a.start_year;
+  const ae = endYearKey(a.end_year);
+  const be = endYearKey(b.end_year);
+  if (be !== ae) return be - ae;
+  return importanceKey(a.importance) - importanceKey(b.importance);
+}
+
+/** 프로젝트 시간 역순 정렬. */
 export function sortProjects<T extends ProjectLike>(items: readonly T[]): T[] {
-  return [...items].sort((a, b) => {
-    if (b.start_year !== a.start_year) return b.start_year - a.start_year;
-    const ae = a.end_year ?? Number.POSITIVE_INFINITY;
-    const be = b.end_year ?? Number.POSITIVE_INFINITY;
-    if (be !== ae) return be - ae;
-    return (a.importance ?? Number.POSITIVE_INFINITY) - (b.importance ?? Number.POSITIVE_INFINITY);
-  });
+  return [...items].sort(compareProjects);
 }
 
 /** date 문자열("YYYY-MM-DD") 내림차순 (특허). */

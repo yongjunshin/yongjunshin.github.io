@@ -98,7 +98,7 @@ export function parseBibtex(raw: string): Publication[] {
     const f = entry.fields as Record<string, unknown>;
     const authors: Author[] = ((f.author as Author[] | undefined) ?? []).map((a) => ({
       firstName: a.firstName,
-      lastName: a.lastName ?? "",
+      lastName: a.lastName,
     }));
     const year = Number.parseInt(fieldToString(f.year) ?? "", 10);
     return {
