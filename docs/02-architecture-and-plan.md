@@ -75,13 +75,12 @@ yongjunshin.github.io/
 │   ├── lib/                       # bib 파서, 정렬, 저자 강조 등
 │   └── styles/                    # 디자인 토큰 + 전역 스타일
 │
-├── public/                        # 파비콘 등 정적 패스스루
-├── astro.config.mjs               # site=https://yongjunshin.github.io, base=/
+├── astro.config.mjs               # site=URL, base=/, publicDir=./contents
 ├── package.json
 └── .github/workflows/deploy.yml   # 빌드 → Pages 배포
 ```
 
-> `contents/`와 `configs/`를 Astro content/loaders가 직접 참조하도록 설정한다(기본 `src/content` 대신 커스텀 경로). 오너 동선은 **contents/ 또는 configs/만** 만지면 끝.
+> `contents/`와 `configs/`를 Astro content/loaders가 직접 참조하도록 설정한다(기본 `src/content` 대신 커스텀 경로). 또한 `publicDir`를 `./contents` 로 지정해, 텍스트(bib/yaml/md)뿐 아니라 PDF·이미지 같은 파일까지 **모두 `contents/` 한 폴더**에 두면 그대로 서빙된다(별도 public/ 폴더 불필요). 오너 동선은 **contents/ 또는 configs/만** 만지면 끝.
 
 > **설계 원칙 (제약 C-6)**: `src/`(코드)는 **개인정보 0**. 코드는 `contents/`·`configs/`에서 데이터를 읽어 렌더링만 한다. 이름·기관·링크·논문 등 어떤 개인 정보도 코드에 하드코딩하지 않는다. → 사이트 자체가 **재사용 가능한 템플릿**이 된다(제3자: contents 교체 + configs 수정 = 끝).
 
