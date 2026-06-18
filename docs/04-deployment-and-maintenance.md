@@ -54,15 +54,15 @@ git checkout backup-al-folio -- .     # 또는 Settings→Pages 소스를 gh-pag
 
 ### 논문 추가 (Publications)
 1. `contents/publications/papers.bib` 에 BibTeX 항목을 추가합니다 (기존과 동일 형식).
-2. 옵션 필드로 에셋을 연결합니다 (**파일은 `public/` 아래에**, bib 에는 파일명만 적습니다):
-   - `preview={파일명.jpg}` → 이미지 파일을 `public/publications/previews/` 에 넣기
-   - `pdf={파일명.pdf}` → `public/publications/pdfs/`
-   - `slides={파일명.pdf}` / `poster={파일명.pdf}` → `public/publications/slides/`
+2. 옵션 필드로 에셋을 연결합니다 (파일은 모두 `contents/` 안에, bib 에는 파일명만 적습니다):
+   - `preview={파일명.jpg}` → 이미지 파일을 `contents/publications/previews/` 에 넣기
+   - `pdf={파일명.pdf}` → `contents/publications/pdfs/`
+   - `slides={파일명.pdf}` / `poster={파일명.pdf}` → `contents/publications/slides/`
    - `website={URL}` , `selected={true}` (메인 Highlighted 에 노출)
    - `pdf`/`slides` 에 `https://...` 외부 URL 을 그대로 넣어도 됩니다(파일 대신).
    - 본인 이름은 `configs/site.yml` 의 `my_name_aliases` 와 일치하면 자동으로 밑줄 표시됩니다.
 
-> 📂 **에셋 위치 규칙**: 다운로드/링크되는 파일(논문·슬라이드 **PDF**, 논문 **미리보기 이미지**, **CV PDF**)은 브라우저에서 직접 열려야 하므로 `public/` 아래에 둡니다 (`public/publications/...`, `public/cv/`). 그 외 본문에 들어가는 이미지(프로필, 프로젝트 그림)는 `contents/` 안에 두면 자동 최적화됩니다.
+> 📂 **모든 콘텐츠는 `contents/` 한 곳에**: 텍스트(bib/yaml/md)든 파일(PDF/이미지)이든 전부 `contents/` 안에 두면 됩니다. `contents/` 가 곧 사이트의 정적 서빙 폴더라, 그 안의 파일은 그대로 링크되어 열립니다. 따로 찾아다닐 다른 폴더는 없습니다.
 
 ### 뉴스 추가 (News)
 `contents/news/YYYY-MM-DD.md` 새 파일:
@@ -110,7 +110,7 @@ importance: 1
 `contents/cv/cv.yml` 에서 섹션 항목을 수정/추가합니다.
 - `type: map` (General Information): `name` / `value` 쌍
 - `type: timeline` (경력·학력·수상·활동): `title` / `institution` / `year` / `url` / `details[]`
-- CV PDF 교체: `public/cv/` 의 PDF 를 바꾸고 `configs/site.yml` 의 `cv_pdf_filename` 을 맞추세요.
+- CV PDF 교체: `contents/cv/` 의 PDF 를 바꾸고 `configs/site.yml` 의 `cv_pdf_filename` 을 맞추세요.
 
 ### 이름 · 링크 · 강조색 변경
 `configs/site.yml` — `display_name`, `role_subtitle`, `links`(이메일/ORCID/Scholar/GitHub/LinkedIn), `copyright_name`, `accent_color`(한 줄로 전체 색 변경), `home_news_count` 등.

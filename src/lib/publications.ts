@@ -4,14 +4,15 @@ import { parseBibtex, type Publication } from "./bibtex";
 import { sortByYearDesc } from "./sort";
 
 /**
- * 논문 에셋(preview/pdf/slides)은 public/publications/ 아래에 보관한다.
- * public/ 의 파일은 dev·프로덕션 모두에서 안정적으로 정적 서빙된다(브라우저 네비게이션 포함).
+ * 논문 에셋(preview/pdf/slides)은 contents/publications/ 아래에 보관한다.
+ * contents/ 는 Astro 의 정적 서빙 폴더(publicDir)이므로 그 안의 파일은 dev·프로덕션 모두에서
+ * 안정적으로 서빙된다(브라우저 네비게이션 포함). 디렉토리 구조가 그대로 URL 경로가 된다.
  * 빌드/SSR 시 디렉토리를 읽어 {소문자 파일명 → URL} 맵을 만든다 (대소문자 불일치에도 견고).
  */
-const PUBLIC_DIR = path.resolve(process.cwd(), "public");
+const CONTENTS_DIR = path.resolve(process.cwd(), "contents");
 
 function buildUrlMap(relDir: string, urlBase: string): Map<string, string> {
-  const dir = path.join(PUBLIC_DIR, relDir);
+  const dir = path.join(CONTENTS_DIR, relDir);
   const map = new Map<string, string>();
   if (fs.existsSync(dir)) {
     for (const file of fs.readdirSync(dir)) {
