@@ -25,6 +25,8 @@ jobs:
       - name: Build Astro site
         # 설치 + 빌드 + Pages 아티팩트 업로드까지 처리
         uses: withastro/action@v3
+        with:
+          node-version: 22 # Astro 6 은 Node >=22.12 필요
 
   deploy:
     needs: build
